@@ -1,0 +1,718 @@
+{
+	"info": {
+		"_postman_id": "02ae48c0-b26d-4c59-9dfb-72642e5d7c3b",
+		"name": "BOOTCAMP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20892843"
+	},
+	"item": [
+		{
+			"name": "CONFIG-SERVER",
+			"item": [
+				{
+					"name": "Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:admin@localhost:8888/bootcamp-transaction-service/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "admin"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"bootcamp-transaction-service",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Config server",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/actuator/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CUSTOMERS",
+			"item": [
+				{
+					"name": "actuator for customer",
+					"item": [
+						{
+							"name": "checkHealth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/actuator/health",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"actuator",
+										"health"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCutomerForId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers/62880f91d06f1026aa652420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"62880f91d06f1026aa652420"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCutomerTypeForId(webClient)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers/test/62880f7ad06f1026aa65241f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"test",
+								"62880f7ad06f1026aa65241f"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductForId(webClient)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers/testP/6287d9e178ba3f0bac6f107e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"testP",
+								"6287d9e178ba3f0bac6f107e"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CUSTOMER TYPE TEST\",\r\n    \"name\": \"TEST\",\r\n    \"lastName\": \"TEST TYPE\",\r\n    \"sex\": \"Mujer\",\r\n    \"dateBirth\": \"2022-05-12\",\r\n    \"documentType\": \"DNI\",\r\n    \"documentNumber\": \"70211847\",\r\n    \"address\": \"av lima 123\",\r\n    \"phone\": \"985613414\",\r\n    \"email\": \"franclinlh@gmail.com\",\r\n    \"customerTypeId\": \"62880f7ad06f1026aa65241f\",\r\n    \"productId\": \"6287d9e178ba3f0bac6f107e\",\r\n    \"bankAccountId\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CUSTOMER TYPE TEST\",\r\n    \"name\": \"TEST\",\r\n    \"lastName\": \"TEST TYPE\",\r\n    \"sex\": \"Mujer\",\r\n    \"dateBirth\": \"2022-05-12\",\r\n    \"documentType\": \"DNI\",\r\n    \"documentNumber\": \"70211847\",\r\n    \"address\": \"av lima 123\",\r\n    \"phone\": \"985613414\",\r\n    \"email\": \"franclinlh@gmail.com\",\r\n    \"customerTypeId\": \"62880f91d06f1026aa652420\",\r\n    \"productId\": \"6287d9e178ba3f0bac6f107e\",\r\n    \"bankAccountId\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers/update/6286a27f47058577ce38683c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"update",
+								"6286a27f47058577ce38683c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers/delete/6282b89e3d02b213dbd6fa42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"delete",
+								"6282b89e3d02b213dbd6fa42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CUSTOMERTYPE",
+			"item": [
+				{
+					"name": "getAllCustomerType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customerType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customerType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerTypeForId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customerType/62880f91d06f1026aa652420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customerType",
+								"62880f91d06f1026aa652420"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNewCustomerType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"\",\r\n    \"customerType\": \"EMPRESARIAL\",\r\n    \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customerType/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customerType",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomerType",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"C-EMPRESARIAL\",\r\n    \"customerType\": \"EMPRESARIAL\",\r\n    \"description\": \"cliente empresarial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customerType/update/62880f91d06f1026aa652420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customerType",
+								"update",
+								"62880f91d06f1026aa652420"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomerType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"test\",\r\n    \"customerType\": \"cliente bancario\",\r\n    \"description\": \"cleitnes test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customerType/delete/62880dd6d06f1026aa65241e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customerType",
+								"delete",
+								"62880dd6d06f1026aa65241e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PAYMENT",
+			"item": []
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductsForId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProducts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"1234\",\r\n    \"productType\": \"Crédito\",\r\n    \"productName\": \"Crédito Personal\",\r\n    \"description\": \"credito personal de empresarios\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/products/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"products",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/products/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CREDIT",
+			"item": []
+		},
+		{
+			"name": "BANKACCOUNT",
+			"item": [
+				{
+					"name": "createBankAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customerId\": \"123\",\r\n   \"productId\" :\"123\",\r\n   \"currency\": \"soles\",\r\n   \"amountAvailable\": \"1234.00\",\r\n   \"countableBalance\": \"123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/bankAccount/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bankAccount",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ASSURANCE",
+			"item": [
+				{
+					"name": "getAllAssurance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assurance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAssurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Assurance number 4\",\r\n    \"minimumAmount\": \"1500.00\",\r\n    \"maximumAmount\": \"3500.00\",\r\n    \"price\":\"13.80\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/assurance/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assurance",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAssurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assurance/delete/6296869b807d3a25beca8e89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assurance",
+								"delete",
+								"6296869b807d3a25beca8e89"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "KAFKA PRODUCER",
+			"item": [
+				{
+					"name": "sendTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contentPage\": [\r\n        {\r\n            \"id\": \"62880f7ad06f1026aa65241f\",\r\n            \"code\": \"C-PERSONAL\",\r\n            \"customerType\": \"PERSONAL\",\r\n            \"description\": \"Cliente personal\"\r\n        },\r\n        {\r\n            \"id\": \"62880f91d06f1026aa652420\",\r\n            \"code\": \"C-EMPRESARIAL\",\r\n            \"customerType\": \"EMPRESARIAL\",\r\n            \"description\": \"cliente empresarial\"\r\n        }\r\n    ],\r\n    \"pageNumber\": 0,\r\n    \"pageSize\": 0,\r\n    \"allElements\": 4,\r\n    \"allPages\": 1,\r\n    \"lastPage\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/api/transaction/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"api",
+								"transaction",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
